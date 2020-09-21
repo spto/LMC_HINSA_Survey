@@ -20,7 +20,7 @@ FUNCTION Kfactor,THINSA,Tb,TH
   return,tau0(0.5,THINSA,Tb,TH)/tau0(1.0,THINSA,Tb,TH)
 END
 
-PRO DR3calcHItoH2fill
+PRO DR3calcHItoH2
 
 timemark
 common time
