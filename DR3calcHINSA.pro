@@ -43,7 +43,10 @@ PRO readHIfits
   z=(dindgen(nz)+0.5-crpixz)*cdeltaz+crvalz;
   z=z/1.0e3
   zhel=z
-  vchannel=abs(cdeltaz)/1.0e3; km/s?
+  vchannel=abs(cdeltaz)/1.0e3; km/s
+  
+  
+  
 
   print,'HI fits read! ',systime()
 
@@ -81,7 +84,7 @@ PRO readCOfits
   y12co=(dindgen(ny12co)+0.5-crpixy12co)*cdeltay12co+crvaly12co;
   z12co=(dindgen(nz12co)+0.5-crpixz12co)*cdeltaz12co+crvalz12co;
   z12co=z12co/1.0e3
-  vchannel12co=abs(cdeltaz12co)/1.0e3; km/s?
+  vchannel12co=abs(cdeltaz12co)/1.0e3; km/s
 
   print,'CO fits read! ',systime()
 
@@ -133,7 +136,7 @@ END
 
 FUNCTION chi2,x
   COMMON share,specmodel,zchi,THchi,vH,sigmaHchi,vchannelchi
-  tau0 = x[0]                                       ;tau0 is the optical depth of HINSA at vH?
+  tau0 = x[0]                                       ;tau0 is the optical depth of HINSA at vH
   tau=tau0*exp(-(zchi-vH)^2/(2.0*sigmaHchi^2))
   specorigin=specmodel*exp(tau)-THchi*(exp(tau)-1.0)
   dspec=deriv(zchi,specorigin) ; derivative
